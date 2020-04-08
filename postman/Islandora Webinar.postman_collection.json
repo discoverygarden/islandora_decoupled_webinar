@@ -1,0 +1,248 @@
+{
+	"info": {
+		"_postman_id": "d876ba9e-899b-4c0a-9bb9-f944cd352aaf",
+		"name": "Islandora Webinar",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Taxonomy",
+			"item": [
+				{
+					"name": "Get models",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get media usage",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/vnd.api+json",
+								"type": "text"
+							},
+							{
+								"key": "Acce",
+								"value": "application/vnd.api+json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{JSONAPI_ENDPOINT}}/taxonomy_term/islandora_media_use?fields[taxonomy_term--islandora_media_use]=name",
+							"host": [
+								"{{JSONAPI_ENDPOINT}}"
+							],
+							"path": [
+								"taxonomy_term",
+								"islandora_media_use"
+							],
+							"query": [
+								{
+									"key": "fields[taxonomy_term--islandora_media_use]",
+									"value": "name"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Read",
+			"item": [
+				{
+					"name": "Get objects",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/vnd.api+json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/vnd.api+json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{JSONAPI_ENDPOINT}}/node/islandora_object?filter[collection-filter][condition][path]=field_model.name&filter[collection-filter][condition][value]=Collection&filter[collection-filter][condition][operator]=%3C%3E&include=uid,field_model,field_member_of",
+							"host": [
+								"{{JSONAPI_ENDPOINT}}"
+							],
+							"path": [
+								"node",
+								"islandora_object"
+							],
+							"query": [
+								{
+									"key": "filter[collection-filter][condition][path]",
+									"value": "field_model.name"
+								},
+								{
+									"key": "filter[collection-filter][condition][value]",
+									"value": "Collection"
+								},
+								{
+									"key": "filter[collection-filter][condition][operator]",
+									"value": "%3C%3E"
+								},
+								{
+									"key": "include",
+									"value": "uid,field_model,field_member_of"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get collections",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/vnd.api+json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/vnd.api+json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{JSONAPI_ENDPOINT}}/node/islandora_object?filter[field_model.name]=Collection&include=uid,field_model,field_member_of",
+							"host": [
+								"{{JSONAPI_ENDPOINT}}"
+							],
+							"path": [
+								"node",
+								"islandora_object"
+							],
+							"query": [
+								{
+									"key": "filter[field_model.name]",
+									"value": "Collection"
+								},
+								{
+									"key": "include",
+									"value": "uid,field_model,field_member_of"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all Islandora entities",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/vnd.api+json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/vnd.api+json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{JSONAPI_ENDPOINT}}/node/islandora_object?include=uid,field_model,field_member_of",
+							"host": [
+								"{{JSONAPI_ENDPOINT}}"
+							],
+							"path": [
+								"node",
+								"islandora_object"
+							],
+							"query": [
+								{
+									"key": "include",
+									"value": "uid,field_model,field_member_of"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get image media",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/vnd.api+json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/vnd.api+json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{JSONAPI_ENDPOINT}}/media/image",
+							"host": [
+								"{{JSONAPI_ENDPOINT}}"
+							],
+							"path": [
+								"media",
+								"image"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "54826fc4-09a3-4f46-b1c6-b25a4e83bf87",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "967de98e-fe56-4557-8afe-4fcae47c8572",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "8f408c68-b7aa-49e9-9d93-8699fb552ea9",
+			"key": "JSONAPI_ENDPOINT",
+			"value": "http://yourdrupal.host/jsonapi",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
