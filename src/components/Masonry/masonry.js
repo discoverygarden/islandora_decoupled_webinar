@@ -15,7 +15,7 @@ class Gallery extends React.Component {
             return (
                 <div key={obj_data.uuid} className="grid-item">
                     <div className="grid-item-inner">
-                        <a href={obj_data.path} title={obj_data.name} target="_blank">
+                        <a href={obj_data.path} title={obj_data.name} target="_blank" rel="noopener noreferrer">
                             <img src={obj_data.img_src} alt={obj_data.name}/>
                             <h2>{obj_data.name}</h2>
                         </a>

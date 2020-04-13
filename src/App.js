@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import logo from './logo.svg';
+import dgi_logo from './dgi_logo.png'
 import './App.css';
 
 import reactAppData from './utils/api'
@@ -26,19 +26,7 @@ class App extends Component {
         return (
             <div className="App">
                 <header className="App-header">
-                    <img src={logo} className="App-logo" alt="logo" />
-                    <p>
-                        Edit <code>src/App.js</code> and save to reload.
-                    </p>
-                    <a
-                        className="App-link"
-                        href="https://reactjs.org"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Learn React
-                    </a>
-
+                    <img src={dgi_logo} className="logo" alt="logo" />
                 </header>
 
                 <Gallery islandora_data={this.state.data}/>
