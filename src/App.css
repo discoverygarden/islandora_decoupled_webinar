@@ -15,7 +15,6 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,4 +34,22 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.grid {
+  width: 100%;
+  display: inline-block;
+  position: relative;
+  max-width: 1165px;
+  margin: 0 auto;
+}
+
+.grid-sizer,
+.grid-item {
+  width: 25%;
+}
+
+.grid-item img {
+  width: 100%;
+  max-width: 100%;
 }
