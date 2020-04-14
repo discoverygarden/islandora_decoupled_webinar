@@ -1,29 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
+import dgi_logo from './dgi_logo.png'
 import './App.css';
 
-import ApiTest from './components/ApiTest'
+import reactAppData from './utils/api'
+import Gallery from './components/Masonry/masonry'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <ApiTest/>
-      </header>
-    </div>
-  );
+class App extends Component {
+
+    constructor() {
+        super()
+        this.state = {
+            data: []
+        }
+    }
+
+    async componentDidMount() {
+        const stateData = await reactAppData();
+
+        this.setState({
+            data: stateData
+        })
+    }
+
+    render() {
+        return (
+            <div className="App">
+                <header className="App-header">
+                    <img src={dgi_logo} className="logo" alt="logo" />
+                </header>
+
+                <Gallery islandora_data={this.state.data}/>
+            </div>
+        );
+    }
 }
 
 export default App;
