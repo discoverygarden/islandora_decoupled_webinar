@@ -11,18 +11,20 @@ const masonryOptions = {
 class Gallery extends React.Component {
 
    render() {
-        const islandoraNodes = this.props.islandora_data.map(function(obj_data){
-            return (
-                <div key={obj_data.uuid} className="grid-item">
-                    <div className="grid-item-inner">
-                        <a href={obj_data.path} title={obj_data.name} target="_blank" rel="noopener noreferrer">
-                            <img src={obj_data.img_src} alt={obj_data.name}/>
-                            <h2>{obj_data.name}</h2>
-                        </a>
-                    </div>
-                </div>
-            );
-        });
+       const childElements = this.props.elements.map(function(element){
+           return (
+               <div key={element.uuid} className="grid-item">
+                   <div className={'grid-item-inner'}>
+                       <div className={'grid-item-data'}>
+                           <a href={element.path} target={"_blank"} rel="noopener noreferrer">
+                               <img src={element.img_src} alt={element.name} title={element.name} />
+                           </a>
+                           <h2>{element.name}</h2>
+                       </div>
+                   </div>
+               </div>
+           );
+       });
 
         return (
             <Masonry
@@ -33,7 +35,7 @@ class Gallery extends React.Component {
                 updateOnEachImageLoad={false} // default false and works only if disableImagesLoaded is false
             >
                 <div className="grid-sizer"></div>
-                {islandoraNodes}
+                {childElements}
             </Masonry>
         );
     }

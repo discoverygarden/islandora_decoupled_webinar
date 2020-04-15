@@ -5,7 +5,8 @@
 .logo {
   height: 10vmin;
   pointer-events: none;
-  margin: 1.5rem auto;
+  max-height: 10vmin;
+  margin: .5rem;
 }
 
 .App-header {
@@ -16,18 +17,11 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  margin-bottom: .5rem;
 }
 
 .App-link {
   color: #61dafb;
-}
-
-.grid {
-  width: 100%;
-  display: inline-block;
-  position: relative;
-  max-width: 1165px;
-  margin: 0 auto;
 }
 
 .grid-sizer,
@@ -35,7 +29,22 @@
   width: 25%;
 }
 
+.grid {
+  margin: 0 auto;
+  max-width: 1165px;
+}
+
 .grid-item img {
   width: 100%;
   max-width: 100%;
+}
+
+.grid-item-inner {
+  margin: .5rem;
+  background-color: #282c34;
+  color: white;
+}
+
+.grid-item-data {
+  padding: .5rem;
 }

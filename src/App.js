@@ -29,7 +29,7 @@ class App extends Component {
                     <img src={dgi_logo} className="logo" alt="logo" />
                 </header>
 
-                <Gallery islandora_data={this.state.data}/>
+                <Gallery elements={this.state.data}/>
             </div>
         );
     }
